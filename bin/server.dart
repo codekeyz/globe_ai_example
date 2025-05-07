@@ -30,9 +30,12 @@ Future<Response> _generateText(Request req) async {
     prompt: prompt,
   );
 
-  return Response.ok(jsonEncode(result), headers: {
-    HttpHeaders.contentTypeHeader: ContentType.json.mimeType,
-  });
+  return Response.ok(
+    jsonEncode(result),
+    headers: {
+      HttpHeaders.contentTypeHeader: ContentType.json.mimeType,
+    },
+  );
 }
 
 Future<Response> _streamText(Request req) async {
@@ -49,19 +52,18 @@ Future<Response> _streamText(Request req) async {
 
   return Response.ok(
     result,
-    headers: {'Content-Type': 'text/plain'},
+    headers: {
+      HttpHeaders.contentTypeHeader: ContentType.text.mimeType,
+    },
   );
 }
 
 void main(List<String> args) async {
-  // Use any available host or container IP (usually `0.0.0.0`).
   final ip = InternetAddress.anyIPv4;
 
-  // Configure a pipeline that logs requests.
   final handler =
       Pipeline().addMiddleware(logRequests()).addHandler(_router.call);
 
-  // For running in containers, we respect the PORT environment variable.
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final server = await serve(handler, ip, port);
   print('Server listening on port ${server.port}');
