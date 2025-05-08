@@ -125,10 +125,10 @@ packages:
     dependency: "direct main"
     description:
       name: globe_ai
-      sha256: d4c03a6b7981e0bdd6a099deb2ffcf8fcf0c55767497a4f09aadd5ee5d032827
+      sha256: fe76f65d35ad2a197c65430a3e67585c9fd036559765f19d2383385db3da1b4e
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.0+2"
+    version: "1.0.0+3"
   globe_runtime:
     dependency: transitive
     description:

@@ -6,7 +6,7 @@ environment:
   sdk: ^3.4.0
 
 dependencies:
-  globe_ai: ^1.0.0+2
+  globe_ai: ^1.0.0+3
   shelf: ^1.4.0
   shelf_router: ^1.1.0
 

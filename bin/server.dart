@@ -31,9 +31,9 @@ Future<Response> _generateText(Request req) async {
   );
 
   return Response.ok(
-    jsonEncode(result),
+    result,
     headers: {
-      HttpHeaders.contentTypeHeader: ContentType.json.mimeType,
+      HttpHeaders.contentTypeHeader: ContentType.text.mimeType,
     },
   );
 }
