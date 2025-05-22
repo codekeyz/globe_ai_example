@@ -6,14 +6,6 @@ import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 
-T safeParseJson<T>(String jsonString) {
-  try {
-    return jsonDecode(jsonString) as T;
-  } catch (e) {
-    rethrow;
-  }
-}
-
 final _router = Router()
   ..post('/generateText', _generateText)
   ..post('/streamText', _streamText);
@@ -67,4 +59,12 @@ void main(List<String> args) async {
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final server = await serve(handler, ip, port);
   print('Server listening on port ${server.port}');
+}
+
+T safeParseJson<T>(String jsonString) {
+  try {
+    return jsonDecode(jsonString) as T;
+  } catch (e) {
+    rethrow;
+  }
 }
