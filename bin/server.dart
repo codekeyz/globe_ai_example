@@ -7,7 +7,8 @@ import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 
 final _router = Router()
-  ..get('/', (req) => Response.ok('Welcome to the Globe AI Example Server! ✅'))
+  ..get(
+      '/', (req) => Response.ok('Welcome to the Globe AI Example Server! ✅ 🚀'))
   ..post('/generateText', _generateText)
   ..post('/streamText', _streamText);
 
