@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://feat-globe-config-fix.dart-globe.pages.dev/globe.schema.json
+
+entrypoint: bin/server.dart
+
+preferred_regions:
+  - africa-south1
+  - asia-south1
+  - europe-west1
