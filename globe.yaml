@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://feat-globe-config-fix.dart-globe.pages.dev/globe.schema.json
+# yaml-language-server: $schema=https://globe.dev/globe.schema.json
 
 entrypoint: bin/server.dart
 

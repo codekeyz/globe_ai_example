@@ -7,8 +7,7 @@ import 'package:shelf/shelf_io.dart';
 import 'package:shelf_router/shelf_router.dart';
 
 final _router = Router()
-  ..get(
-      '/', (req) => Response.ok('Welcome to the Globe AI Example Server! ✅ 🚀'))
+  ..get('/', (req) => Response.ok('Welcome to the Globe AI Example Server!'))
   ..post('/generateText', _generateText)
   ..post('/streamText', _streamText);
 
@@ -55,7 +54,8 @@ Future<Response> _streamText(Request req) async {
 void main(List<String> args) async {
   final ip = InternetAddress.anyIPv4;
 
-  final handler = Pipeline().addHandler(_router.call);
+  final handler =
+      Pipeline().addHandler((req) => Response.ok('Hello, Dart Frog!'));
 
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final server = await serve(handler, ip, port);
