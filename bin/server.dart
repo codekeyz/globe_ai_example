@@ -55,7 +55,7 @@ void main(List<String> args) async {
   final ip = InternetAddress.anyIPv4;
 
   final handler =
-      Pipeline().addHandler((req) => Response.ok('Hello, Dart Frog!'));
+      Pipeline().addHandler((req) => Response.ok('Hello, Dart Frog! 🐸'));
 
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final server = await serve(handler, ip, port);
